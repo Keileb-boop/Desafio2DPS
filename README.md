@@ -22,5 +22,6 @@ Integrantes:
    - npm install @react-native-async-storage/async-storage
    - npm install react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated
    - npx expo install react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated
+   
 <h2>Nota</h2>
 Estos comandos deben de instalarse en la terminal de VS Code y los 2 ultimos paquetes son necesarios ya que de esos dependen tambien tanto *native-stack* y *react-navigation*
