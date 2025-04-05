@@ -1,5 +1,5 @@
 # Desafio2DPS
-Este es el repositorio para las aplicaciones móviles
+Esta es la rama para los archivos de la aplicación de citas para mantenimiento de vehiculos⌚🚗
 
 Integrantes:
 
