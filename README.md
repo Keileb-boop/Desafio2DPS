@@ -28,8 +28,8 @@ Estos comandos deben de instalarse en la terminal de VS Code y los 2 ultimos paq
 
 ***********************************************************************************************************************************************************************************
 
-Una vez instaladas todas las libererias se corre el programa
--npm start
+Una vez instaladas todas las libererias se corre el programa:
+- npm start
 
 Con la ayuda de nuestra aplicación Expo Go para móviles o con nuestro programa de desarrollador Android Studio y su MV de un celular de android, puede visualizar nuestra aplicación😊❤️
 
