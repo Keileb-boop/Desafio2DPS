@@ -2,7 +2,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Inicio from "./src/screens/inicio";
 import HomeScreen from './src/screens/HomeScreen';
 import AddAppointmentScreen from './src/screens/AddAppointmentScreen';
 import EditAppointmentScreen from './src/screens/EditAppointmentScreen';
