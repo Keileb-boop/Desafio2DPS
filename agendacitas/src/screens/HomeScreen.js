@@ -1,9 +1,22 @@
+// src/screens/HomeScreen.js
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, Alert, StyleSheet, Button, Dimensions } from 'react-native';
+import { 
+  View, 
+  Text, 
+  FlatList, 
+  TouchableOpacity, 
+  Alert, 
+  StyleSheet, 
+  Button, 
+  Image, 
+  Pressable,
+  useWindowDimensions
+} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function HomeScreen({ navigation }) {
   const [appointments, setAppointments] = useState([]);
+  const { width } = useWindowDimensions(); // 👈 Se adapta automáticamente
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', loadAppointments);
@@ -12,65 +25,69 @@ export default function HomeScreen({ navigation }) {
 
   const loadAppointments = async () => {
     const data = await AsyncStorage.getItem('appointments');
-    if (data) {
-      setAppointments(JSON.parse(data));
-    }
+    if (data) setAppointments(JSON.parse(data));
   };
 
-  const confirmDelete = (id) => {
+  const deleteAppointment = (id) => {
     Alert.alert(
-      '¿Eliminar cita?',
+      'Confirmar Eliminación',
       '¿Estás seguro de eliminar esta cita?',
       [
         { text: 'Cancelar', style: 'cancel' },
-        { text: 'Eliminar', onPress: () => deleteAppointment(id), style: 'destructive' }
+        { 
+          text: 'Eliminar', 
+          style: 'destructive', 
+          onPress: async () => {
+            const updated = appointments.filter(item => item.id !== id);
+            setAppointments(updated);
+            await AsyncStorage.setItem('appointments', JSON.stringify(updated));
+          }
+        },
       ]
     );
   };
 
-  const deleteAppointment = async (id) => {
-    const updatedAppointments = appointments.filter((item) => item.id !== id);
-    setAppointments(updatedAppointments);
-    await AsyncStorage.setItem('appointments', JSON.stringify(updatedAppointments));
-  };
-
-  const renderItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.card}
-      onPress={() => navigation.navigate('EditAppointment', { appointment: item })}
-      onLongPress={() => confirmDelete(item.id)}
-    >
-      <Text style={styles.title}>{item.clientName}</Text>
-      <Text style={styles.subtitle}>{item.vehicleModel}</Text>
-      <Text style={styles.date}>{item.date} - {item.time}</Text>
-    </TouchableOpacity>
-  );
+  const numColumns = width > 600 ? 2 : 1; // 👈 se actualiza dinámicamente
 
   return (
     <View style={styles.container}>
-
-
-
-
-
-      <Button
-        title="Agregar Nueva Cita"
-        onPress={() => navigation.navigate('AddAppointment')}
-        color="#ff4e68"
-      />
-      {appointments.length === 0 ? (
-        <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>No hay citas registradas aún.</Text>
-        </View>
-      ) : (
-        <FlatList
-          data={appointments}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          numColumns={Dimensions.get('window').width > 600 ? 2 : 1}
-          contentContainerStyle={styles.list}
+      
+      {/* Parte superior: Imagen y botón */}
+      <View style={styles.header}>
+        <Image 
+          source={require('../screens/img/carrito.jpeg')} 
+          style={styles.logo} 
         />
-      )}
+        <Pressable 
+          style={styles.addButton} 
+          onPress={() => navigation.navigate('AddAppointment')}
+        >
+          <Text style={styles.addButtonText}>Agregar Cita</Text>
+        </Pressable>
+      </View>
+
+      {/* Lista de citas */}
+      <FlatList
+        data={appointments}
+        key={numColumns} // 👈 necesario para que se regenere FlatList
+        numColumns={numColumns}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => navigation.navigate('EditAppointment', { appointment: item })}
+          >
+            <Text style={styles.title}>{item.clientName}</Text>
+            <Text>{item.vehicleModel}</Text>
+            <Text>{item.date} {item.time}</Text>
+            <Button title="Eliminar" onPress={() => deleteAppointment(item.id)} />
+          </TouchableOpacity>
+        )}
+        ListEmptyComponent={
+          <Text style={styles.emptyText}>No hay citas registradas.</Text>
+        }
+        contentContainerStyle={appointments.length === 0 && styles.emptyContainer}
+      />
     </View>
   );
 }
@@ -78,33 +95,44 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
-    padding: 10,
+    backgroundColor: '#fff',
+    padding: 16,
   },
-  list: {
+  header: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  logo: {
+    width: 150,
+    height: 150,
+    resizeMode: 'contain',
+    marginBottom: 10,
+    borderRadius: 70,
+  },
+  addButton: {
     marginTop: 10,
+    backgroundColor: '#007bff',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+  addButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
   card: {
-    backgroundColor: '#ffffff',
-    padding: 20,
-    margin: 10,
-    borderRadius: 15,
-    elevation: 3,
     flex: 1,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 15,
+    margin: 8,
+    padding: 16,
+    elevation: 3,
   },
   title: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
-    color: '#333',
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#666',
-    marginVertical: 4,
-  },
-  date: {
-    fontSize: 14,
-    color: '#999',
+    marginBottom: 6,
   },
   emptyContainer: {
     flex: 1,
@@ -112,7 +140,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    fontSize: 18,
-    color: '#aaa',
+    fontSize: 16,
+    color: 'gray',
   },
 });
