@@ -1,0 +1,164 @@
+[
+    {
+      "id": 1,
+      "nombre": "Tamal de Elote",
+      "descripcion": "El tamal de elote es uno de los más populares",
+      "foto": "https://guanacos.com/wp-content/uploads/2024/09/GUANACOS-TAMALES-DE-ELOTE-SALVADORENOS-2.webp",
+      "ingredientes": ["Elotes tiernos y frescos","1/2 taza de leche","6 Onzas de manteca derretida",
+      "Azúcar y sal al gusto"],
+      "region": "El Salvador",
+      "precio": 2.5,
+      "categoria": "Desayuno o antojo"
+    },
+    {
+      "id": 2,
+      "nombre": "Tacos al Pastor",
+      "descripcion": "Tortillas con carne de cerdo marinada",
+      "foto": "https://s3.amazonaws.com/static.realcaliforniamilk.com/media/recipes_2/tacos-al-pastor.jpg",
+      "ingredientes": ["Tortilla", "Carne de cerdo", "Piña", "Cilantro", "Cebolla"],
+      "region": "México",
+      "precio": 3.5,
+      "categoria": "Cena"
+    },
+    {
+      "id": 3,
+      "nombre": "Ceviche",
+      "descripcion": "Pescado marinado con limón",
+      "foto": "https://familiakitchen.com/wp-content/uploads/2020/10/Ceviche-Peru-2.jpg",
+      "ingredientes": ["Pescado", "Limón", "Cebolla"],
+      "region": "Perú",
+      "precio": 5.0,
+      "categoria": "Almuerzo"
+    },
+    {
+      "id": 4,
+      "nombre": "Paella",
+      "descripcion": "Arroz con mariscos y azafrán",
+      "foto": "https://peopleenespanol.com/thmb/ktyb8yciisQKJXL3xk56GxUlfcw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/paella-espac3b1ola-2000-7e458a494ada4f4e935a374360c3587b.jpg",
+      "ingredientes": ["Arroz", "Mariscos", "Azafrán", "Pimiento"],
+      "region": "España",
+      "precio": 8.0,
+      "categoria": "Almuerzo"
+    },
+    {
+      "id": 5,
+      "nombre": "Sushi",
+      "descripcion": "Arroz avinagrado con pescado crudo",
+      "foto": "https://www.oliveradatenea.com/wp-content/uploads/2023/06/Sushi-rolls-de-salmon-y-Olivada-Olivera-dAtenea.jpg",
+      "ingredientes": ["Arroz", "Pescado crudo", "Alga nori", "Vinagre"],
+      "region": "Japón",
+      "precio": 10.0,
+      "categoria": "Cena"
+    },
+    {
+      "id": 6,
+      "nombre": "Pizza Margherita",
+      "descripcion": "Pizza con tomate, mozzarella y albahaca",
+      "foto": "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg",
+      "ingredientes": ["Masa", "Tomate", "Mozzarella", "Albahaca"],
+      "region": "Italia",
+      "precio": 6.0,
+      "categoria": "Cena"
+    },
+    {
+      "id": 7,
+      "nombre": "Feijoada",
+      "descripcion": "Estofado de frijoles negros con carne",
+      "foto": "https://comedera.com/wp-content/uploads/sites/9/2022/03/feijoada-brasilena.jpg",
+      "ingredientes": ["Frijoles negros", "Carne de cerdo", "Arroz", "Naranja"],
+      "region": "Brasil",
+      "precio": 7.0,
+      "categoria": "Almuerzo"
+    },
+    {
+      "id": 8,
+      "nombre": "Croissant",
+      "descripcion": "Panecillo hojaldrado y mantecoso",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0OQ3WSxF7T07W_h-nKMt72DxHgBzSZzCTjQ&s",
+      "ingredientes": ["Harina", "Mantequilla", "Levadura", "Azúcar"],
+      "region": "Francia",
+      "precio": 2.5,
+      "categoria": "Desayuno"
+    },
+    {
+      "id": 9,
+      "nombre": "Pad Thai",
+      "descripcion": "Tallarines salteados con camarones y cacahuate",
+      "foto": "https://recetasdecocina.elmundo.es/wp-content/uploads/2023/11/pad-thai-receta.jpg",
+      "ingredientes": ["Tallarines de arroz", "Camarones", "Cacahuates", "Brotes de soya"],
+      "region": "Tailandia",
+      "precio": 6.5,
+      "categoria": "Cena"
+    },
+    {
+      "id": 10,
+      "nombre": "Pierogi",
+      "descripcion": "Empanadillas rellenas de papa y queso",
+      "foto": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/GNYBJBE67II6ZFBYEVLQTNWN3Q.jpg&w=800&h=600",
+      "ingredientes": ["Harina", "Papa", "Queso", "Cebolla"],
+      "region": "Polonia",
+      "precio": 4.0,
+      "categoria": "Almuerzo"
+    },
+    {
+      "id": 11,
+      "nombre": "Poutine",
+      "descripcion": "Papas fritas con salsa y queso",
+      "foto": "https://images.themodernproper.com/production/posts/2022/HomemadePoutineRecipe_Shot8_78.jpg?w=1200&q=82&auto=format&fit=crop&dm=1667570349&s=3cd94c0af52699777115476e21d3fdf5",
+      "ingredientes": ["Papas", "Gravy", "Queso en grano"],
+      "region": "Canadá",
+      "precio": 4.5,
+      "categoria": "Cena"
+    },
+    {
+      "id": 12,
+      "nombre": "Shakshuka",
+      "descripcion": "Huevos escalfados en salsa de tomate",
+      "foto": "https://cdn.recetasderechupete.com/wp-content/uploads/2018/03/Shakshuka.jpg",
+      "ingredientes": ["Huevos", "Tomate", "Pimiento", "Cebolla"],
+      "region": "Israel",
+      "precio": 5.5,
+      "categoria": "Desayuno"
+    },
+    {
+      "id": 13,
+      "nombre": "Kimchi",
+      "descripcion": "Col fermentada picante",
+      "foto": "https://d2yoo3qu6vrk5d.cloudfront.net/pulzo-lite/images-resized/PP158R-s-o.webp",
+      "ingredientes": ["Col", "Ajo", "Jengibre", "Chile"],
+      "region": "Corea del Sur",
+      "precio": 3.0,
+      "categoria": "Acompañamiento"
+    },
+    {
+      "id": 14,
+      "nombre": "Biryani",
+      "descripcion": "Arroz especiado con carne",
+      "foto": "https://www.lavanguardia.com/files/og_thumbnail/files/fp/uploads/2023/03/08/64087cadad453.r_d.1060-707-5658.jpeg",
+      "ingredientes": ["Arroz", "Carne", "Especias", "Yogur"],
+      "region": "India",
+      "precio": 6.0,
+      "categoria": "Almuerzo"
+    },
+    {
+      "id": 15,
+      "nombre": "Moussaka",
+      "descripcion": "Pastel de berenjenas y carne",
+      "foto": "https://terrad.es/wp-content/uploads/2022/01/moussaka-griega-1.jpg",
+      "ingredientes": ["Berenjena", "Carne molida", "Salsa bechamel"],
+      "region": "Grecia",
+      "precio": 7.5,
+      "categoria": "Cena"
+    },
+    {
+      "id": 16,
+      "nombre": "Baklava",
+      "descripcion": "Postre de hojaldre con nueces y miel",
+      "foto": "https://www.sherry.wine/media/images/bakavla.width-876.png",
+      "ingredientes": ["Masa filo", "Nueces", "Miel", "Canela"],
+      "region": "Turquía",
+      "precio": 3.5,
+      "categoria": "Postre"
+    }
+  ]
+  
