@@ -44,7 +44,7 @@ export default function EditAppointmentScreen({ route, navigation }) {
       <TextInput style={styles.input} value={description} onChangeText={setDescription} />
 
       <View style={{ marginTop: 20 }}>
-        <Button title="Actualizar Cita" onPress={updateAppointment} color="#4CAF50" />
+        <Button title="Actualizar Cita" onPress={updateAppointment} color="#007bff" />
       </View>
     </View>
   );
