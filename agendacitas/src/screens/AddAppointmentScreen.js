@@ -70,7 +70,7 @@ export default function AddAppointmentScreen({ navigation }) {
         value={time}
         onChangeText={setTime}
       />
-      <Text style={styles.label}>Descripción del Problema (Opcional)</Text>
+      <Text style={styles.label}>Descripción del Problema </Text>
       <TextInput
         style={styles.input}
         value={description}
@@ -78,7 +78,7 @@ export default function AddAppointmentScreen({ navigation }) {
       />
 
       <View style={{ marginTop: 20 }}>
-        <Button title="Guardar Cita" onPress={saveAppointment} color="#ff4e4e" />
+        <Button title="Guardar Cita" onPress={saveAppointment} color="#007bff" />
       </View>
     </View>
   );
